@@ -1,0 +1,537 @@
+Analysis & Synthesis report for MIPS1CYCLE
+Thu Dec 09 16:02:16 2021
+Quartus II 64-Bit Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Parameter Settings for User Entity Instance: DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component
+ 12. Parameter Settings for User Entity Instance: Control:MIPSControl
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Dec 09 16:02:16 2021    ;
+; Quartus II 64-Bit Version   ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; MIPS1CYCLE                               ;
+; Top-level Entity Name       ; MIPS1CYCLE                               ;
+; Family                      ; APEX20KE                                 ;
+; Total logic elements        ; 2,601                                    ;
+; Total pins                  ; 236                                      ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 1,024                                    ;
+; Total PLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                 ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+; Option                                                                                     ; Setting          ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+; Device                                                                                     ; EP20K1500EFC33-3 ;               ;
+; Top-level entity name                                                                      ; MIPS1CYCLE       ; MIPS1CYCLE    ;
+; Family name                                                                                ; APEX20KE         ; Stratix II    ;
+; Use Generated Physical Constraints File                                                    ; Off              ;               ;
+; Use smart compilation                                                                      ; Off              ; Off           ;
+; Create Debugging Nodes for IP Cores                                                        ; Off              ; Off           ;
+; Preserve fewer node names                                                                  ; On               ; On            ;
+; Disable OpenCore Plus hardware evaluation                                                  ; Off              ; Off           ;
+; Verilog Version                                                                            ; Verilog_2001     ; Verilog_2001  ;
+; VHDL Version                                                                               ; VHDL93           ; VHDL93        ;
+; State Machine Processing                                                                   ; Auto             ; Auto          ;
+; Safe State Machine                                                                         ; Off              ; Off           ;
+; Extract Verilog State Machines                                                             ; On               ; On            ;
+; Extract VHDL State Machines                                                                ; On               ; On            ;
+; Ignore Verilog initial constructs                                                          ; Off              ; Off           ;
+; Add Pass-Through Logic to Inferred RAMs                                                    ; On               ; On            ;
+; Parallel Synthesis                                                                         ; Off              ; Off           ;
+; NOT Gate Push-Back                                                                         ; On               ; On            ;
+; Power-Up Don't Care                                                                        ; On               ; On            ;
+; Remove Redundant Logic Cells                                                               ; Off              ; Off           ;
+; Remove Duplicate Registers                                                                 ; On               ; On            ;
+; Ignore CARRY Buffers                                                                       ; Off              ; Off           ;
+; Ignore CASCADE Buffers                                                                     ; Off              ; Off           ;
+; Ignore GLOBAL Buffers                                                                      ; Off              ; Off           ;
+; Ignore ROW GLOBAL Buffers                                                                  ; Off              ; Off           ;
+; Ignore LCELL Buffers                                                                       ; Off              ; Off           ;
+; Ignore SOFT Buffers                                                                        ; On               ; On            ;
+; Limit AHDL Integers to 32 Bits                                                             ; Off              ; Off           ;
+; Auto Implement in ROM                                                                      ; Off              ; Off           ;
+; Technology Mapper -- APEX 20K/APEX 20KE/APEX 20KC/APEX II/ARM-based Excalibur              ; LUT              ; LUT           ;
+; Optimization Technique -- APEX 20K/APEX 20KE/APEX 20KC/APEX II/ARM-based Excalibur         ; Balanced         ; Balanced      ;
+; Allow XOR Gate Usage                                                                       ; On               ; On            ;
+; Carry Chain Length                                                                         ; 48               ; 48            ;
+; Cascade Chain Length                                                                       ; 2                ; 2             ;
+; Parallel Expander Chain Length -- APEX 20K/APEX 20KE/APEX 20KC/APEX II/ARM-based Excalibur ; 16               ; 16            ;
+; Auto Carry Chains                                                                          ; On               ; On            ;
+; Auto Parallel Expanders                                                                    ; On               ; On            ;
+; Auto Open-Drain Pins                                                                       ; On               ; On            ;
+; Perform WYSIWYG Primitive Resynthesis                                                      ; Off              ; Off           ;
+; Perform gate-level register retiming                                                       ; Off              ; Off           ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                                     ; On               ; On            ;
+; Auto ROM Replacement                                                                       ; On               ; On            ;
+; Auto RAM Replacement                                                                       ; On               ; On            ;
+; Auto Shift Register Replacement                                                            ; Auto             ; Auto          ;
+; Auto Clock Enable Replacement                                                              ; On               ; On            ;
+; Auto Resource Sharing                                                                      ; Off              ; Off           ;
+; Allow Any RAM Size For Recognition                                                         ; Off              ; Off           ;
+; Allow Any ROM Size For Recognition                                                         ; Off              ; Off           ;
+; Allow Any Shift Register Size For Recognition                                              ; Off              ; Off           ;
+; Ignore translate_off and synthesis_off directives                                          ; Off              ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report                                         ; On               ; On            ;
+; Ignore Maximum Fan-Out Assignments                                                         ; Off              ; Off           ;
+; Retiming Meta-Stability Register Sequence Length                                           ; 2                ; 2             ;
+; HDL message level                                                                          ; Level2           ; Level2        ;
+; Suppress Register Optimization Related Messages                                            ; Off              ; Off           ;
+; Number of Removed Registers Reported in Synthesis Report                                   ; 100              ; 100           ;
+; Block Design Naming                                                                        ; Auto             ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                               ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+
+; MIPS1CYCLE.v                     ; yes             ; User Verilog HDL File  ; D:/WD500/MIPS1CYCLE/MIPS1CYCLE.v                           ;
+; IMemory.v                        ; yes             ; Other                  ; D:/WD500/MIPS1CYCLE/IMemory.v                              ;
+; lpm_rom.tdf                      ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/lpm_rom.tdf    ;
+; altrom.inc                       ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/altrom.inc     ;
+; aglobal72.inc                    ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/aglobal72.inc  ;
+; altrom.tdf                       ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/altrom.tdf     ;
+; memmodes.inc                     ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/others/maxplus2/memmodes.inc ;
+; lpm_decode.inc                   ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/lpm_decode.inc ;
+; lpm_mux.inc                      ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/lpm_mux.inc    ;
+; altqpram.inc                     ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/altqpram.inc   ;
+; altsyncram.inc                   ; yes             ; Megafunction           ; d:/wd500/72/quartus/libraries/megafunctions/altsyncram.inc ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++-----------------------------------+---------+
+; Resource                          ; Usage   ;
++-----------------------------------+---------+
+; Total logic elements              ; 2601    ;
+; Total combinational functions     ; 2601    ;
+;     -- Total 4-input functions    ; 1266    ;
+;     -- Total 3-input functions    ; 1211    ;
+;     -- Total 2-input functions    ; 98      ;
+;     -- Total 1-input functions    ; 26      ;
+;     -- Total 0-input functions    ; 0       ;
+; Total registers                   ; 1006    ;
+; Total logic cells in carry chains ; 109     ;
+; I/O pins                          ; 236     ;
+; Total memory bits                 ; 1024    ;
+; Maximum fan-out node              ; clock   ;
+; Maximum fan-out                   ; 1006    ;
+; Total fan-out                     ; 12477   ;
+; Average fan-out                   ; 4.35    ;
++-----------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                ;
++--------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node           ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                    ; Library Name ;
++--------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------+--------------+
+; |MIPS1CYCLE                          ; 2601 (0)    ; 1006         ; 1024        ; 236  ; 0            ; 1595 (0)     ; 0 (0)             ; 1006 (0)         ; 109 (0)         ; 0 (0)      ; |MIPS1CYCLE                                                                            ; work         ;
+;    |Control:MIPSControl|             ; 10 (10)     ; 0            ; 0           ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MIPS1CYCLE|Control:MIPSControl                                                        ; work         ;
+;    |DataPath:MIPSDP|                 ; 2591 (127)  ; 1006         ; 1024        ; 0    ; 0            ; 1585 (101)   ; 0 (0)             ; 1006 (26)        ; 109 (52)        ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP                                                            ; work         ;
+;       |ALUControl:alucontroller|     ; 11 (11)     ; 0            ; 0           ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP|ALUControl:alucontroller                                   ; work         ;
+;       |DataMemory:datamemory|        ; 372 (372)   ; 224          ; 0           ; 0    ; 0            ; 148 (148)    ; 0 (0)             ; 224 (224)        ; 0 (0)           ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP|DataMemory:datamemory                                      ; work         ;
+;       |IMemory:IMemory_inst|         ; 0 (0)       ; 0            ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP|IMemory:IMemory_inst                                       ; work         ;
+;          |lpm_rom:lpm_rom_component| ; 0 (0)       ; 0            ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component             ; work         ;
+;             |altrom:srom|            ; 0 (0)       ; 0            ; 1024        ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom ; work         ;
+;       |MIPSALU:ALU|                  ; 229 (229)   ; 0            ; 0           ; 0    ; 0            ; 229 (229)    ; 0 (0)             ; 0 (0)            ; 57 (57)         ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP|MIPSALU:ALU                                                ; work         ;
+;       |RegisterFile:REG|             ; 1852 (1852) ; 756          ; 0           ; 0    ; 0            ; 1096 (1096)  ; 0 (0)             ; 756 (756)        ; 0 (0)           ; 0 (0)      ; |MIPS1CYCLE|DataPath:MIPSDP|RegisterFile:REG                                           ; work         ;
++--------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                           ;
++------------------------------------------------------------------------------------+------+--------------+--------------+--------------+--------------+------+-------------+
+; Name                                                                               ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF         ;
++------------------------------------------------------------------------------------+------+--------------+--------------+--------------+--------------+------+-------------+
+; DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom|content ; ROM  ; 32           ; 32           ; --           ; --           ; 1024 ; IMemory.mif ;
++------------------------------------------------------------------------------------+------+--------------+--------------+--------------+--------------+------+-------------+
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++--------------------------------------------+---------------------------------------------+
+; Register name                              ; Reason for Removal                          ;
++--------------------------------------------+---------------------------------------------+
+; DataPath:MIPSDP|PC[28..31]                 ; Stuck at GND due to stuck port data_in      ;
+; DataPath:MIPSDP|PC[0]                      ; Merged with DataPath:MIPSDP|PC[1]           ;
+; DataPath:MIPSDP|PC[1]                      ; Stuck at GND due to stuck port data_in      ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][0]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][1]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][2]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][3]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][4]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][5]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][6]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][7]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][8]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][9]  ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][10] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][11] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][12] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][13] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][14] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][15] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][16] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][17] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][18] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][19] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][20] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][21] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][22] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][23] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][24] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][25] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][26] ; Stuck at GND due to stuck port clock_enable ;
+; DataPath:MIPSDP|RegisterFile:REG|RF[0][27] ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 34     ;                                             ;
++--------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1006  ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 26    ;
+; Number of registers using Asynchronous Clear ; 980   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 980   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Inverted Register Statistics                                ;
++---------------------------------------------------+---------+
+; Inverted Register                                 ; Fan out ;
++---------------------------------------------------+---------+
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][0]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[2][0]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[0][0]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[1][1]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[3][1]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][2]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[7][2]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[2][2]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[0][2]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[5][3]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[1][3]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[3][3]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][4]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[2][4]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[3][5]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][6]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[7][6]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[2][6]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[5][7]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[3][7]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][8]  ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][10] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[7][10] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[5][11] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][12] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[4][14] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[7][14] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[5][15] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[6][16] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[6][18] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[6][20] ; 1       ;
+; DataPath:MIPSDP|DataMemory:datamemory|DMem[6][22] ; 1       ;
+; Total number of inverted registers = 32           ;         ;
++---------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component ;
++------------------------+--------------+---------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                ;
++------------------------+--------------+---------------------------------------------------------------------+
+; LPM_WIDTH              ; 32           ; Signed Integer                                                      ;
+; LPM_WIDTHAD            ; 5            ; Signed Integer                                                      ;
+; LPM_NUMWORDS           ; 32           ; Untyped                                                             ;
+; LPM_ADDRESS_CONTROL    ; UNREGISTERED ; Untyped                                                             ;
+; LPM_OUTDATA            ; UNREGISTERED ; Untyped                                                             ;
+; LPM_FILE               ; IMemory.mif  ; Untyped                                                             ;
+; DEVICE_FAMILY          ; APEX20KE     ; Untyped                                                             ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                      ;
++------------------------+--------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:MIPSControl ;
++----------------+--------+----------------------------------------+
+; Parameter Name ; Value  ; Type                                   ;
++----------------+--------+----------------------------------------+
+; R_Format       ; 000000 ; Unsigned Binary                        ;
+; LW             ; 100011 ; Unsigned Binary                        ;
+; SW             ; 101011 ; Unsigned Binary                        ;
+; BEQ            ; 000100 ; Unsigned Binary                        ;
+; J              ; 000010 ; Unsigned Binary                        ;
+; ANDI           ; 001100 ; Unsigned Binary                        ;
++----------------+--------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Thu Dec 09 16:01:34 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS1CYCLE -c MIPS1CYCLE
+Info: Found 7 design units, including 7 entities, in source file MIPS1CYCLE.v
+    Info: Found entity 1: RegisterFile
+    Info: Found entity 2: ALUControl
+    Info: Found entity 3: MIPSALU
+    Info: Found entity 4: DataMemory
+    Info: Found entity 5: Control
+    Info: Found entity 6: DataPath
+    Info: Found entity 7: MIPS1CYCLE
+Info: Elaborating entity "MIPS1CYCLE" for the top level hierarchy
+Info: Elaborating entity "DataPath" for hierarchy "DataPath:MIPSDP"
+Warning (10036): Verilog HDL or VHDL warning at MIPS1CYCLE.v(146): object "shamt" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(172): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(180): truncated value with size 32 to match size of target (28)
+Info: Elaborating entity "ALUControl" for hierarchy "DataPath:MIPSDP|ALUControl:alucontroller"
+Info: Elaborating entity "MIPSALU" for hierarchy "DataPath:MIPSDP|MIPSALU:ALU"
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(72): truncated value with size 32 to match size of target (28)
+Info: Elaborating entity "RegisterFile" for hierarchy "DataPath:MIPSDP|RegisterFile:REG"
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(17): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(18): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(19): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(20): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(21): truncated value with size 32 to match size of target (28)
+Warning (10230): Verilog HDL assignment warning at MIPS1CYCLE.v(22): truncated value with size 32 to match size of target (28)
+Warning (10240): Verilog HDL Always Construct warning at MIPS1CYCLE.v(24): inferring latch(es) for variable "k", which holds its previous value in one or more paths through the always construct
+Info: Elaborating entity "DataMemory" for hierarchy "DataPath:MIPSDP|DataMemory:datamemory"
+Warning: Using design file IMemory.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: IMemory
+Info: Elaborating entity "IMemory" for hierarchy "DataPath:MIPSDP|IMemory:IMemory_inst"
+Info: Found 1 design units, including 1 entities, in source file ../72/quartus/libraries/megafunctions/lpm_rom.tdf
+    Info: Found entity 1: lpm_rom
+Info: Elaborating entity "lpm_rom" for hierarchy "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component"
+Info: Elaborated megafunction instantiation "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component"
+Info: Found 1 design units, including 1 entities, in source file ../72/quartus/libraries/megafunctions/altrom.tdf
+    Info: Found entity 1: altrom
+Info: Elaborating entity "altrom" for hierarchy "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom"
+Info: Elaborated megafunction instantiation "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom", which is child of megafunction instantiation "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component"
+Info: Instantiated megafunction "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component" with the following parameter:
+    Info: Parameter "intended_device_family" = "APEX20KE"
+    Info: Parameter "lpm_address_control" = "UNREGISTERED"
+    Info: Parameter "lpm_file" = "IMemory.mif"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "lpm_outdata" = "UNREGISTERED"
+    Info: Parameter "lpm_type" = "LPM_ROM"
+    Info: Parameter "lpm_width" = "32"
+    Info: Parameter "lpm_widthad" = "5"
+Info: Elaborating entity "Control" for hierarchy "Control:MIPSControl"
+Warning (12030): Port "ordered port 18" on the entity instantiation of "MIPSDP" is connected to a signal of width 28. The formal width of the signal in the module is 32.  Extra bits will be left dangling without any fanout logic.
+Warning (14130): Reduced register "DataPath:MIPSDP|PC[28]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "DataPath:MIPSDP|PC[29]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "DataPath:MIPSDP|PC[30]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "DataPath:MIPSDP|PC[31]" with stuck data_in port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "DataPath:MIPSDP|PC[0]" merged to single register "DataPath:MIPSDP|PC[1]"
+Warning (14130): Reduced register "DataPath:MIPSDP|PC[1]" with stuck data_in port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][0]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][0]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][7]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][7]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][8]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][8]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][9]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][9]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][10]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][10]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][11]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][11]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][12]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][12]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][13]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][13]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][14]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][14]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][15]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][15]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][16]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][16]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][17]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][17]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][18]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][18]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][19]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][19]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][20]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][20]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][21]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][21]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][22]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][22]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][23]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][23]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][24]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][24]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][25]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][25]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][26]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][26]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "DataPath:MIPSDP|RegisterFile:REG|RF[0][27]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "DataPath:MIPSDP|RegisterFile:REG|RF[0][27]" with stuck clock_enable port to stuck value GND
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[26]~0 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[26]~1 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[27]~2 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[27]~3 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[28]~4 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[29]~5 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[30]~6 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[31]~7 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[23]~8 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[24]~9 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[22]~10 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[21]~11 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[25]~12 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[0]~13 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[18]~14 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[19]~15 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[17]~16 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[16]~17 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[20]~18 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[4]~19 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[5]~20 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[1]~21 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[2]~22 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[3]~23 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[6]~24 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[7]~25 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[8]~26 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[9]~27 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[10]~28 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[11]~29 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[12]~30 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[13]~31 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[14]~32 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[15]~33 feeding logic, open-drain buffer, or output pin
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[26]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[27]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[28]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[29]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[30]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[31]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[23]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[24]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[22]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[21]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[25]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[0]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[18]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[19]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[17]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[16]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[20]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[4]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[5]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[1]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[2]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[3]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[6]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[7]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[8]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[9]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[10]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[11]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[12]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[13]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[14]" that feeds logic to an OR gate
+Warning: Converting TRI node "DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|otri[15]" that feeds logic to an OR gate
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "PC[0]" stuck at GND
+    Warning (13410): Pin "PC[1]" stuck at GND
+    Warning (13410): Pin "PC[28]" stuck at GND
+    Warning (13410): Pin "PC[29]" stuck at GND
+    Warning (13410): Pin "PC[30]" stuck at GND
+    Warning (13410): Pin "PC[31]" stuck at GND
+Info: Implemented 2869 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 234 output pins
+    Info: Implemented 2601 logic cells
+    Info: Implemented 32 RAM segments
+Info: Generated suppressed messages file D:/WD500/MIPS1CYCLE/MIPS1CYCLE.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 147 warnings
+    Info: Allocated 4392 megabytes of memory during processing
+    Info: Processing ended: Thu Dec 09 16:02:16 2021
+    Info: Elapsed time: 00:00:42
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/WD500/MIPS1CYCLE/MIPS1CYCLE.map.smsg.
+
+

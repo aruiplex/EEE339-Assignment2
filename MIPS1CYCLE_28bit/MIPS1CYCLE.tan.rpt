@@ -1,0 +1,713 @@
+Classic Timing Analyzer report for MIPS1CYCLE
+Thu Dec 09 16:03:13 2021
+Quartus II 64-Bit Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clock'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                         ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                  ; To                     ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 0.030 ns                         ; reset                 ; DataPath:MIPSDP|PC[9]  ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 61.493 ns                        ; DataPath:MIPSDP|PC[5] ; DReadData[2]           ; clock      ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.514 ns                         ; reset                 ; DataPath:MIPSDP|PC[27] ; --         ; clock    ; 0            ;
+; Clock Setup: 'clock'         ; N/A   ; None          ; 19.99 MHz ( period = 50.036 ns ) ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[6]  ; clock      ; clock    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                       ;                        ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP20K1500EFC33-3   ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                                                                            ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                  ; To                                          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 19.99 MHz ( period = 50.036 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[6]                       ; clock      ; clock    ; None                        ; None                      ; 49.458 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.036 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[6]                       ; clock      ; clock    ; None                        ; None                      ; 49.458 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.036 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[6]                       ; clock      ; clock    ; None                        ; None                      ; 49.458 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.036 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[6]                       ; clock      ; clock    ; None                        ; None                      ; 49.458 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[4]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[4]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[4]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[4]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[5]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[5]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[5]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[5]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[7]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[7]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[7]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.035 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[7]                       ; clock      ; clock    ; None                        ; None                      ; 49.457 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.034 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[8]                       ; clock      ; clock    ; None                        ; None                      ; 49.456 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.034 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[8]                       ; clock      ; clock    ; None                        ; None                      ; 49.456 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.034 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[8]                       ; clock      ; clock    ; None                        ; None                      ; 49.456 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.034 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[8]                       ; clock      ; clock    ; None                        ; None                      ; 49.456 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[3]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[3]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[3]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[3]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[6]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[9]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[9]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[9]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.033 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[9]                       ; clock      ; clock    ; None                        ; None                      ; 49.455 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.032 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[4]                       ; clock      ; clock    ; None                        ; None                      ; 49.454 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.032 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[5]                       ; clock      ; clock    ; None                        ; None                      ; 49.454 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.032 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[7]                       ; clock      ; clock    ; None                        ; None                      ; 49.454 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.031 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[2]                       ; clock      ; clock    ; None                        ; None                      ; 49.453 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.031 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[2]                       ; clock      ; clock    ; None                        ; None                      ; 49.453 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.031 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[2]                       ; clock      ; clock    ; None                        ; None                      ; 49.453 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.031 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[2]                       ; clock      ; clock    ; None                        ; None                      ; 49.453 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.031 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[8]                       ; clock      ; clock    ; None                        ; None                      ; 49.453 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.030 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[3]                       ; clock      ; clock    ; None                        ; None                      ; 49.452 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.030 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[9]                       ; clock      ; clock    ; None                        ; None                      ; 49.452 ns               ;
+; N/A                                     ; 19.99 MHz ( period = 50.028 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[2]                       ; clock      ; clock    ; None                        ; None                      ; 49.450 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[15]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[15]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[15]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[15]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[16]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[16]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[16]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[16]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[17]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[17]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[17]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.942 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[17]                      ; clock      ; clock    ; None                        ; None                      ; 49.364 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[14]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[14]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[14]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[14]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[18]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[18]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[18]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.941 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[18]                      ; clock      ; clock    ; None                        ; None                      ; 49.363 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.940 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[13]                      ; clock      ; clock    ; None                        ; None                      ; 49.362 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.940 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[13]                      ; clock      ; clock    ; None                        ; None                      ; 49.362 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.940 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[13]                      ; clock      ; clock    ; None                        ; None                      ; 49.362 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.940 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[13]                      ; clock      ; clock    ; None                        ; None                      ; 49.362 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.939 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[15]                      ; clock      ; clock    ; None                        ; None                      ; 49.361 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.939 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[16]                      ; clock      ; clock    ; None                        ; None                      ; 49.361 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.939 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[17]                      ; clock      ; clock    ; None                        ; None                      ; 49.361 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.939 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[19]                      ; clock      ; clock    ; None                        ; None                      ; 49.361 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.939 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[19]                      ; clock      ; clock    ; None                        ; None                      ; 49.361 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.939 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[19]                      ; clock      ; clock    ; None                        ; None                      ; 49.361 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.939 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[19]                      ; clock      ; clock    ; None                        ; None                      ; 49.361 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.938 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[12]                      ; clock      ; clock    ; None                        ; None                      ; 49.360 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.938 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[12]                      ; clock      ; clock    ; None                        ; None                      ; 49.360 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.938 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[12]                      ; clock      ; clock    ; None                        ; None                      ; 49.360 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.938 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[12]                      ; clock      ; clock    ; None                        ; None                      ; 49.360 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.938 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[14]                      ; clock      ; clock    ; None                        ; None                      ; 49.360 ns               ;
+; N/A                                     ; 20.02 MHz ( period = 49.938 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[18]                      ; clock      ; clock    ; None                        ; None                      ; 49.360 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.937 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[2][26]  ; clock      ; clock    ; None                        ; None                      ; 49.436 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.937 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[13]                      ; clock      ; clock    ; None                        ; None                      ; 49.359 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.936 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[19]                      ; clock      ; clock    ; None                        ; None                      ; 49.358 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.935 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[11]                      ; clock      ; clock    ; None                        ; None                      ; 49.357 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.935 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[11]                      ; clock      ; clock    ; None                        ; None                      ; 49.357 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.935 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[11]                      ; clock      ; clock    ; None                        ; None                      ; 49.357 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.935 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[11]                      ; clock      ; clock    ; None                        ; None                      ; 49.357 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.935 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[12]                      ; clock      ; clock    ; None                        ; None                      ; 49.357 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.932 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|PC[10]                      ; clock      ; clock    ; None                        ; None                      ; 49.354 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.932 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|PC[10]                      ; clock      ; clock    ; None                        ; None                      ; 49.354 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.932 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|PC[10]                      ; clock      ; clock    ; None                        ; None                      ; 49.354 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.932 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|PC[10]                      ; clock      ; clock    ; None                        ; None                      ; 49.354 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.932 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[11]                      ; clock      ; clock    ; None                        ; None                      ; 49.354 ns               ;
+; N/A                                     ; 20.03 MHz ( period = 49.929 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|PC[10]                      ; clock      ; clock    ; None                        ; None                      ; 49.351 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.902 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[2][26]  ; clock      ; clock    ; None                        ; None                      ; 49.401 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.898 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[2][26]  ; clock      ; clock    ; None                        ; None                      ; 49.397 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.890 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[2][26]  ; clock      ; clock    ; None                        ; None                      ; 49.389 ns               ;
+; N/A                                     ; 20.05 MHz ( period = 49.869 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[2][26]  ; clock      ; clock    ; None                        ; None                      ; 49.368 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.801 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[1][26]  ; clock      ; clock    ; None                        ; None                      ; 49.300 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.790 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[5][26]  ; clock      ; clock    ; None                        ; None                      ; 49.289 ns               ;
+; N/A                                     ; 20.09 MHz ( period = 49.766 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[1][26]  ; clock      ; clock    ; None                        ; None                      ; 49.265 ns               ;
+; N/A                                     ; 20.10 MHz ( period = 49.762 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[1][26]  ; clock      ; clock    ; None                        ; None                      ; 49.261 ns               ;
+; N/A                                     ; 20.10 MHz ( period = 49.755 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[5][26]  ; clock      ; clock    ; None                        ; None                      ; 49.254 ns               ;
+; N/A                                     ; 20.10 MHz ( period = 49.754 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[1][26]  ; clock      ; clock    ; None                        ; None                      ; 49.253 ns               ;
+; N/A                                     ; 20.10 MHz ( period = 49.751 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[5][26]  ; clock      ; clock    ; None                        ; None                      ; 49.250 ns               ;
+; N/A                                     ; 20.10 MHz ( period = 49.743 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[5][26]  ; clock      ; clock    ; None                        ; None                      ; 49.242 ns               ;
+; N/A                                     ; 20.11 MHz ( period = 49.733 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[1][26]  ; clock      ; clock    ; None                        ; None                      ; 49.232 ns               ;
+; N/A                                     ; 20.11 MHz ( period = 49.722 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[5][26]  ; clock      ; clock    ; None                        ; None                      ; 49.221 ns               ;
+; N/A                                     ; 20.13 MHz ( period = 49.685 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[11][26] ; clock      ; clock    ; None                        ; None                      ; 49.184 ns               ;
+; N/A                                     ; 20.13 MHz ( period = 49.682 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[10][26] ; clock      ; clock    ; None                        ; None                      ; 49.181 ns               ;
+; N/A                                     ; 20.13 MHz ( period = 49.670 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[9][26]  ; clock      ; clock    ; None                        ; None                      ; 49.169 ns               ;
+; N/A                                     ; 20.13 MHz ( period = 49.670 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[13][26] ; clock      ; clock    ; None                        ; None                      ; 49.169 ns               ;
+; N/A                                     ; 20.13 MHz ( period = 49.665 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[12][26] ; clock      ; clock    ; None                        ; None                      ; 49.164 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.661 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[7][26]  ; clock      ; clock    ; None                        ; None                      ; 49.160 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.660 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[15][26] ; clock      ; clock    ; None                        ; None                      ; 49.159 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.657 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[20][26] ; clock      ; clock    ; None                        ; None                      ; 49.030 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.655 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[23][26] ; clock      ; clock    ; None                        ; None                      ; 49.028 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.650 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[11][26] ; clock      ; clock    ; None                        ; None                      ; 49.149 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.647 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[10][26] ; clock      ; clock    ; None                        ; None                      ; 49.146 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.646 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[11][26] ; clock      ; clock    ; None                        ; None                      ; 49.145 ns               ;
+; N/A                                     ; 20.14 MHz ( period = 49.643 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[10][26] ; clock      ; clock    ; None                        ; None                      ; 49.142 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.638 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[11][26] ; clock      ; clock    ; None                        ; None                      ; 49.137 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.635 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[10][26] ; clock      ; clock    ; None                        ; None                      ; 49.134 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.635 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[9][26]  ; clock      ; clock    ; None                        ; None                      ; 49.134 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.635 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[13][26] ; clock      ; clock    ; None                        ; None                      ; 49.134 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.633 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[25][26] ; clock      ; clock    ; None                        ; None                      ; 49.006 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.631 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[9][26]  ; clock      ; clock    ; None                        ; None                      ; 49.130 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.631 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[13][26] ; clock      ; clock    ; None                        ; None                      ; 49.130 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.630 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[12][26] ; clock      ; clock    ; None                        ; None                      ; 49.129 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.626 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[12][26] ; clock      ; clock    ; None                        ; None                      ; 49.125 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.626 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[7][26]  ; clock      ; clock    ; None                        ; None                      ; 49.125 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.625 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[26][26] ; clock      ; clock    ; None                        ; None                      ; 48.998 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.625 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[15][26] ; clock      ; clock    ; None                        ; None                      ; 49.124 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.623 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[9][26]  ; clock      ; clock    ; None                        ; None                      ; 49.122 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.623 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[13][26] ; clock      ; clock    ; None                        ; None                      ; 49.122 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.622 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[20][26] ; clock      ; clock    ; None                        ; None                      ; 48.995 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.622 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[7][26]  ; clock      ; clock    ; None                        ; None                      ; 49.121 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.621 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[15][26] ; clock      ; clock    ; None                        ; None                      ; 49.120 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.620 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[23][26] ; clock      ; clock    ; None                        ; None                      ; 48.993 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.618 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[20][26] ; clock      ; clock    ; None                        ; None                      ; 48.991 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.618 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[12][26] ; clock      ; clock    ; None                        ; None                      ; 49.117 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.617 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[11][26] ; clock      ; clock    ; None                        ; None                      ; 49.116 ns               ;
+; N/A                                     ; 20.15 MHz ( period = 49.616 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[23][26] ; clock      ; clock    ; None                        ; None                      ; 48.989 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.614 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[10][26] ; clock      ; clock    ; None                        ; None                      ; 49.113 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.614 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[7][26]  ; clock      ; clock    ; None                        ; None                      ; 49.113 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.613 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[15][26] ; clock      ; clock    ; None                        ; None                      ; 49.112 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.610 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[20][26] ; clock      ; clock    ; None                        ; None                      ; 48.983 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.608 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[23][26] ; clock      ; clock    ; None                        ; None                      ; 48.981 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.602 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[9][26]  ; clock      ; clock    ; None                        ; None                      ; 49.101 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.602 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[13][26] ; clock      ; clock    ; None                        ; None                      ; 49.101 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.600 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[8][26]  ; clock      ; clock    ; None                        ; None                      ; 49.099 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.598 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[25][26] ; clock      ; clock    ; None                        ; None                      ; 48.971 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.597 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[12][26] ; clock      ; clock    ; None                        ; None                      ; 49.096 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.594 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[25][26] ; clock      ; clock    ; None                        ; None                      ; 48.967 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.593 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[7][26]  ; clock      ; clock    ; None                        ; None                      ; 49.092 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.592 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[15][26] ; clock      ; clock    ; None                        ; None                      ; 49.091 ns               ;
+; N/A                                     ; 20.17 MHz ( period = 49.590 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[26][26] ; clock      ; clock    ; None                        ; None                      ; 48.963 ns               ;
+; N/A                                     ; 20.17 MHz ( period = 49.589 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[20][26] ; clock      ; clock    ; None                        ; None                      ; 48.962 ns               ;
+; N/A                                     ; 20.17 MHz ( period = 49.587 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[23][26] ; clock      ; clock    ; None                        ; None                      ; 48.960 ns               ;
+; N/A                                     ; 20.17 MHz ( period = 49.586 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[26][26] ; clock      ; clock    ; None                        ; None                      ; 48.959 ns               ;
+; N/A                                     ; 20.17 MHz ( period = 49.586 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[25][26] ; clock      ; clock    ; None                        ; None                      ; 48.959 ns               ;
+; N/A                                     ; 20.17 MHz ( period = 49.578 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[26][26] ; clock      ; clock    ; None                        ; None                      ; 48.951 ns               ;
+; N/A                                     ; 20.17 MHz ( period = 49.575 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[17][26] ; clock      ; clock    ; None                        ; None                      ; 48.948 ns               ;
+; N/A                                     ; 20.18 MHz ( period = 49.565 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[25][26] ; clock      ; clock    ; None                        ; None                      ; 48.938 ns               ;
+; N/A                                     ; 20.18 MHz ( period = 49.565 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[8][26]  ; clock      ; clock    ; None                        ; None                      ; 49.064 ns               ;
+; N/A                                     ; 20.18 MHz ( period = 49.561 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[8][26]  ; clock      ; clock    ; None                        ; None                      ; 49.060 ns               ;
+; N/A                                     ; 20.18 MHz ( period = 49.557 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[26][26] ; clock      ; clock    ; None                        ; None                      ; 48.930 ns               ;
+; N/A                                     ; 20.18 MHz ( period = 49.553 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[8][26]  ; clock      ; clock    ; None                        ; None                      ; 49.052 ns               ;
+; N/A                                     ; 20.19 MHz ( period = 49.540 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[17][26] ; clock      ; clock    ; None                        ; None                      ; 48.913 ns               ;
+; N/A                                     ; 20.19 MHz ( period = 49.539 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][26] ; clock      ; clock    ; None                        ; None                      ; 48.912 ns               ;
+; N/A                                     ; 20.19 MHz ( period = 49.537 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[6][26]  ; clock      ; clock    ; None                        ; None                      ; 49.036 ns               ;
+; N/A                                     ; 20.19 MHz ( period = 49.537 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[3][26]  ; clock      ; clock    ; None                        ; None                      ; 48.987 ns               ;
+; N/A                                     ; 20.19 MHz ( period = 49.536 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[17][26] ; clock      ; clock    ; None                        ; None                      ; 48.909 ns               ;
+; N/A                                     ; 20.19 MHz ( period = 49.532 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[8][26]  ; clock      ; clock    ; None                        ; None                      ; 49.031 ns               ;
+; N/A                                     ; 20.19 MHz ( period = 49.528 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[17][26] ; clock      ; clock    ; None                        ; None                      ; 48.901 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.507 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[17][26] ; clock      ; clock    ; None                        ; None                      ; 48.880 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.504 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][26] ; clock      ; clock    ; None                        ; None                      ; 48.877 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.502 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[6][26]  ; clock      ; clock    ; None                        ; None                      ; 49.001 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.502 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[3][26]  ; clock      ; clock    ; None                        ; None                      ; 48.952 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][26] ; clock      ; clock    ; None                        ; None                      ; 48.873 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.498 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[6][26]  ; clock      ; clock    ; None                        ; None                      ; 48.997 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.498 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[3][26]  ; clock      ; clock    ; None                        ; None                      ; 48.948 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.492 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][26] ; clock      ; clock    ; None                        ; None                      ; 48.865 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.490 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[6][26]  ; clock      ; clock    ; None                        ; None                      ; 48.989 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.490 ns )                    ; DataPath:MIPSDP|PC[4] ; DataPath:MIPSDP|RegisterFile:REG|RF[3][26]  ; clock      ; clock    ; None                        ; None                      ; 48.940 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.487 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[22][22] ; clock      ; clock    ; None                        ; None                      ; 48.881 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.482 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][22] ; clock      ; clock    ; None                        ; None                      ; 48.876 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.481 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[19][22] ; clock      ; clock    ; None                        ; None                      ; 48.875 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.476 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[21][22] ; clock      ; clock    ; None                        ; None                      ; 48.870 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.471 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][26] ; clock      ; clock    ; None                        ; None                      ; 48.844 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.469 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[6][26]  ; clock      ; clock    ; None                        ; None                      ; 48.968 ns               ;
+; N/A                                     ; 20.21 MHz ( period = 49.469 ns )                    ; DataPath:MIPSDP|PC[3] ; DataPath:MIPSDP|RegisterFile:REG|RF[3][26]  ; clock      ; clock    ; None                        ; None                      ; 48.919 ns               ;
+; N/A                                     ; 20.22 MHz ( period = 49.465 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[24][26] ; clock      ; clock    ; None                        ; None                      ; 48.838 ns               ;
+; N/A                                     ; 20.22 MHz ( period = 49.460 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[27][26] ; clock      ; clock    ; None                        ; None                      ; 48.833 ns               ;
+; N/A                                     ; 20.22 MHz ( period = 49.452 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[22][22] ; clock      ; clock    ; None                        ; None                      ; 48.846 ns               ;
+; N/A                                     ; 20.22 MHz ( period = 49.448 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[22][22] ; clock      ; clock    ; None                        ; None                      ; 48.842 ns               ;
+; N/A                                     ; 20.22 MHz ( period = 49.447 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][22] ; clock      ; clock    ; None                        ; None                      ; 48.841 ns               ;
+; N/A                                     ; 20.22 MHz ( period = 49.446 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[19][22] ; clock      ; clock    ; None                        ; None                      ; 48.840 ns               ;
+; N/A                                     ; 20.22 MHz ( period = 49.444 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[19][26] ; clock      ; clock    ; None                        ; None                      ; 48.817 ns               ;
+; N/A                                     ; 20.23 MHz ( period = 49.443 ns )                    ; DataPath:MIPSDP|PC[5] ; DataPath:MIPSDP|RegisterFile:REG|RF[27][22] ; clock      ; clock    ; None                        ; None                      ; 48.837 ns               ;
+; N/A                                     ; 20.23 MHz ( period = 49.443 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[16][22] ; clock      ; clock    ; None                        ; None                      ; 48.837 ns               ;
+; N/A                                     ; 20.23 MHz ( period = 49.442 ns )                    ; DataPath:MIPSDP|PC[6] ; DataPath:MIPSDP|RegisterFile:REG|RF[19][22] ; clock      ; clock    ; None                        ; None                      ; 48.836 ns               ;
+; N/A                                     ; 20.23 MHz ( period = 49.441 ns )                    ; DataPath:MIPSDP|PC[2] ; DataPath:MIPSDP|RegisterFile:REG|RF[21][22] ; clock      ; clock    ; None                        ; None                      ; 48.835 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                       ;                                             ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+-------+------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                     ; To Clock ;
++-------+--------------+------------+-------+------------------------+----------+
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[2]  ; clock    ;
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[3]  ; clock    ;
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[4]  ; clock    ;
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[5]  ; clock    ;
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[6]  ; clock    ;
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[7]  ; clock    ;
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[8]  ; clock    ;
+; N/A   ; None         ; 0.030 ns   ; reset ; DataPath:MIPSDP|PC[9]  ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[10] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[11] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[12] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[13] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[14] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[15] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[16] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[17] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[18] ; clock    ;
+; N/A   ; None         ; 0.008 ns   ; reset ; DataPath:MIPSDP|PC[19] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[20] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[21] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[22] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[23] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[24] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[25] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[26] ; clock    ;
+; N/A   ; None         ; -0.014 ns  ; reset ; DataPath:MIPSDP|PC[27] ; clock    ;
++-------+--------------+------------+-------+------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+------------+--------------------------------------------+------------------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                                       ; To               ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+--------------------------------------------+------------------+------------+
+; N/A                                     ; None                                                ; 61.493 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 61.458 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 61.454 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 61.446 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 61.425 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 59.129 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 59.094 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 59.090 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 59.082 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 59.061 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 59.049 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 59.014 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 59.010 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 59.002 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 58.981 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 58.784 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[26]    ; clock      ;
+; N/A                                     ; None                                                ; 58.749 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[26]    ; clock      ;
+; N/A                                     ; None                                                ; 58.745 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[26]    ; clock      ;
+; N/A                                     ; None                                                ; 58.737 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[26]    ; clock      ;
+; N/A                                     ; None                                                ; 58.716 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[26]    ; clock      ;
+; N/A                                     ; None                                                ; 58.648 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[9]     ; clock      ;
+; N/A                                     ; None                                                ; 58.613 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[9]     ; clock      ;
+; N/A                                     ; None                                                ; 58.609 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[9]     ; clock      ;
+; N/A                                     ; None                                                ; 58.601 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[9]     ; clock      ;
+; N/A                                     ; None                                                ; 58.580 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[9]     ; clock      ;
+; N/A                                     ; None                                                ; 58.467 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[22]    ; clock      ;
+; N/A                                     ; None                                                ; 58.432 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[22]    ; clock      ;
+; N/A                                     ; None                                                ; 58.428 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[22]    ; clock      ;
+; N/A                                     ; None                                                ; 58.420 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[22]    ; clock      ;
+; N/A                                     ; None                                                ; 58.399 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[22]    ; clock      ;
+; N/A                                     ; None                                                ; 58.229 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[20]    ; clock      ;
+; N/A                                     ; None                                                ; 58.217 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[19]    ; clock      ;
+; N/A                                     ; None                                                ; 58.194 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[20]    ; clock      ;
+; N/A                                     ; None                                                ; 58.190 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[20]    ; clock      ;
+; N/A                                     ; None                                                ; 58.182 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[20]    ; clock      ;
+; N/A                                     ; None                                                ; 58.182 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[19]    ; clock      ;
+; N/A                                     ; None                                                ; 58.178 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[19]    ; clock      ;
+; N/A                                     ; None                                                ; 58.170 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[19]    ; clock      ;
+; N/A                                     ; None                                                ; 58.161 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[20]    ; clock      ;
+; N/A                                     ; None                                                ; 58.149 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[19]    ; clock      ;
+; N/A                                     ; None                                                ; 56.795 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[11]    ; clock      ;
+; N/A                                     ; None                                                ; 56.760 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[11]    ; clock      ;
+; N/A                                     ; None                                                ; 56.756 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[11]    ; clock      ;
+; N/A                                     ; None                                                ; 56.748 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[11]    ; clock      ;
+; N/A                                     ; None                                                ; 56.727 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[11]    ; clock      ;
+; N/A                                     ; None                                                ; 56.423 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[21]    ; clock      ;
+; N/A                                     ; None                                                ; 56.388 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[21]    ; clock      ;
+; N/A                                     ; None                                                ; 56.388 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 56.384 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[21]    ; clock      ;
+; N/A                                     ; None                                                ; 56.376 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[21]    ; clock      ;
+; N/A                                     ; None                                                ; 56.355 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[21]    ; clock      ;
+; N/A                                     ; None                                                ; 55.842 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[4]     ; clock      ;
+; N/A                                     ; None                                                ; 55.807 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[4]     ; clock      ;
+; N/A                                     ; None                                                ; 55.803 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[4]     ; clock      ;
+; N/A                                     ; None                                                ; 55.795 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[4]     ; clock      ;
+; N/A                                     ; None                                                ; 55.774 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[4]     ; clock      ;
+; N/A                                     ; None                                                ; 55.752 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[25]    ; clock      ;
+; N/A                                     ; None                                                ; 55.717 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[25]    ; clock      ;
+; N/A                                     ; None                                                ; 55.713 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[25]    ; clock      ;
+; N/A                                     ; None                                                ; 55.705 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[25]    ; clock      ;
+; N/A                                     ; None                                                ; 55.687 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[10]    ; clock      ;
+; N/A                                     ; None                                                ; 55.684 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[25]    ; clock      ;
+; N/A                                     ; None                                                ; 55.652 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[10]    ; clock      ;
+; N/A                                     ; None                                                ; 55.648 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[10]    ; clock      ;
+; N/A                                     ; None                                                ; 55.640 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[10]    ; clock      ;
+; N/A                                     ; None                                                ; 55.619 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[10]    ; clock      ;
+; N/A                                     ; None                                                ; 55.109 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[13]    ; clock      ;
+; N/A                                     ; None                                                ; 55.074 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[13]    ; clock      ;
+; N/A                                     ; None                                                ; 55.070 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[13]    ; clock      ;
+; N/A                                     ; None                                                ; 55.066 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[7]     ; clock      ;
+; N/A                                     ; None                                                ; 55.062 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[13]    ; clock      ;
+; N/A                                     ; None                                                ; 55.041 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[13]    ; clock      ;
+; N/A                                     ; None                                                ; 55.031 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[7]     ; clock      ;
+; N/A                                     ; None                                                ; 55.027 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[7]     ; clock      ;
+; N/A                                     ; None                                                ; 55.019 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[7]     ; clock      ;
+; N/A                                     ; None                                                ; 54.998 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[7]     ; clock      ;
+; N/A                                     ; None                                                ; 54.420 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[17]    ; clock      ;
+; N/A                                     ; None                                                ; 54.385 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[17]    ; clock      ;
+; N/A                                     ; None                                                ; 54.381 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[17]    ; clock      ;
+; N/A                                     ; None                                                ; 54.373 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[17]    ; clock      ;
+; N/A                                     ; None                                                ; 54.352 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[17]    ; clock      ;
+; N/A                                     ; None                                                ; 54.320 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[3][3]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 54.254 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[8]     ; clock      ;
+; N/A                                     ; None                                                ; 54.247 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[12]    ; clock      ;
+; N/A                                     ; None                                                ; 54.241 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[17][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 54.219 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[8]     ; clock      ;
+; N/A                                     ; None                                                ; 54.215 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[8]     ; clock      ;
+; N/A                                     ; None                                                ; 54.212 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[12]    ; clock      ;
+; N/A                                     ; None                                                ; 54.208 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[12]    ; clock      ;
+; N/A                                     ; None                                                ; 54.207 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[8]     ; clock      ;
+; N/A                                     ; None                                                ; 54.200 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[12]    ; clock      ;
+; N/A                                     ; None                                                ; 54.186 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[8]     ; clock      ;
+; N/A                                     ; None                                                ; 54.179 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[12]    ; clock      ;
+; N/A                                     ; None                                                ; 54.174 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[20][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 54.089 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][3] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 54.024 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 53.971 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[17][4] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.944 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 53.679 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[26]    ; clock      ;
+; N/A                                     ; None                                                ; 53.645 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[23][3] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.614 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[4][0]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.543 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[9]     ; clock      ;
+; N/A                                     ; None                                                ; 53.383 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[19][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.362 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[22]    ; clock      ;
+; N/A                                     ; None                                                ; 53.280 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[16][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.271 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[16]    ; clock      ;
+; N/A                                     ; None                                                ; 53.249 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[13][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.236 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[16]    ; clock      ;
+; N/A                                     ; None                                                ; 53.232 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[16]    ; clock      ;
+; N/A                                     ; None                                                ; 53.224 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[16]    ; clock      ;
+; N/A                                     ; None                                                ; 53.203 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[16]    ; clock      ;
+; N/A                                     ; None                                                ; 53.193 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[6]     ; clock      ;
+; N/A                                     ; None                                                ; 53.182 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[18][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.168 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[18]    ; clock      ;
+; N/A                                     ; None                                                ; 53.158 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[6]     ; clock      ;
+; N/A                                     ; None                                                ; 53.154 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[6]     ; clock      ;
+; N/A                                     ; None                                                ; 53.146 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[6]     ; clock      ;
+; N/A                                     ; None                                                ; 53.136 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[23]    ; clock      ;
+; N/A                                     ; None                                                ; 53.133 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[18]    ; clock      ;
+; N/A                                     ; None                                                ; 53.129 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[18]    ; clock      ;
+; N/A                                     ; None                                                ; 53.125 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[6]     ; clock      ;
+; N/A                                     ; None                                                ; 53.124 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[20]    ; clock      ;
+; N/A                                     ; None                                                ; 53.121 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[18]    ; clock      ;
+; N/A                                     ; None                                                ; 53.112 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[19]    ; clock      ;
+; N/A                                     ; None                                                ; 53.101 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[23]    ; clock      ;
+; N/A                                     ; None                                                ; 53.100 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[18]    ; clock      ;
+; N/A                                     ; None                                                ; 53.097 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[23]    ; clock      ;
+; N/A                                     ; None                                                ; 53.089 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[23]    ; clock      ;
+; N/A                                     ; None                                                ; 53.079 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[5][0]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 53.068 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[23]    ; clock      ;
+; N/A                                     ; None                                                ; 52.971 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[15]    ; clock      ;
+; N/A                                     ; None                                                ; 52.947 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[1][0]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.936 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[15]    ; clock      ;
+; N/A                                     ; None                                                ; 52.932 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[15]    ; clock      ;
+; N/A                                     ; None                                                ; 52.924 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[15]    ; clock      ;
+; N/A                                     ; None                                                ; 52.907 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[14]    ; clock      ;
+; N/A                                     ; None                                                ; 52.903 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[15]    ; clock      ;
+; N/A                                     ; None                                                ; 52.872 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[14]    ; clock      ;
+; N/A                                     ; None                                                ; 52.868 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[14]    ; clock      ;
+; N/A                                     ; None                                                ; 52.860 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[14]    ; clock      ;
+; N/A                                     ; None                                                ; 52.850 ns  ; DataPath:MIPSDP|PC[2]                      ; ALUResultOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 52.850 ns  ; DataPath:MIPSDP|PC[3]                      ; ALUResultOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 52.850 ns  ; DataPath:MIPSDP|PC[4]                      ; ALUResultOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 52.850 ns  ; DataPath:MIPSDP|PC[6]                      ; ALUResultOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 52.847 ns  ; DataPath:MIPSDP|PC[5]                      ; ALUResultOut[24] ; clock      ;
+; N/A                                     ; None                                                ; 52.839 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[14]    ; clock      ;
+; N/A                                     ; None                                                ; 52.600 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[1]     ; clock      ;
+; N/A                                     ; None                                                ; 52.585 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[21][3] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.565 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[1]     ; clock      ;
+; N/A                                     ; None                                                ; 52.561 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[1]     ; clock      ;
+; N/A                                     ; None                                                ; 52.553 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[1]     ; clock      ;
+; N/A                                     ; None                                                ; 52.544 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[9][3]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.541 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[13][0] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.532 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[1]     ; clock      ;
+; N/A                                     ; None                                                ; 52.486 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[24]    ; clock      ;
+; N/A                                     ; None                                                ; 52.483 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[5]     ; clock      ;
+; N/A                                     ; None                                                ; 52.451 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[24]    ; clock      ;
+; N/A                                     ; None                                                ; 52.448 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[5]     ; clock      ;
+; N/A                                     ; None                                                ; 52.447 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[24]    ; clock      ;
+; N/A                                     ; None                                                ; 52.444 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[5]     ; clock      ;
+; N/A                                     ; None                                                ; 52.439 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[24]    ; clock      ;
+; N/A                                     ; None                                                ; 52.436 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[5]     ; clock      ;
+; N/A                                     ; None                                                ; 52.418 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[24]    ; clock      ;
+; N/A                                     ; None                                                ; 52.415 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[5]     ; clock      ;
+; N/A                                     ; None                                                ; 52.338 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[3][2]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.325 ns  ; DataPath:MIPSDP|PC[2]                      ; ALUResultOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 52.325 ns  ; DataPath:MIPSDP|PC[3]                      ; ALUResultOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 52.325 ns  ; DataPath:MIPSDP|PC[4]                      ; ALUResultOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 52.325 ns  ; DataPath:MIPSDP|PC[6]                      ; ALUResultOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 52.322 ns  ; DataPath:MIPSDP|PC[5]                      ; ALUResultOut[27] ; clock      ;
+; N/A                                     ; None                                                ; 52.296 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[7][2]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.191 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[12][0] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.180 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[16][4] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.155 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[4][3]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.112 ns  ; DataPath:MIPSDP|PC[5]                      ; DReadData[0]     ; clock      ;
+; N/A                                     ; None                                                ; 52.109 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[1][2]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.077 ns  ; DataPath:MIPSDP|PC[2]                      ; DReadData[0]     ; clock      ;
+; N/A                                     ; None                                                ; 52.073 ns  ; DataPath:MIPSDP|PC[6]                      ; DReadData[0]     ; clock      ;
+; N/A                                     ; None                                                ; 52.065 ns  ; DataPath:MIPSDP|PC[4]                      ; DReadData[0]     ; clock      ;
+; N/A                                     ; None                                                ; 52.045 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[3][4]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 52.044 ns  ; DataPath:MIPSDP|PC[3]                      ; DReadData[0]     ; clock      ;
+; N/A                                     ; None                                                ; 52.027 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[23][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.956 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[3][3]  ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 51.877 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[17][2] ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 51.876 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[3][3]  ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 51.869 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[1][23] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.845 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[2][9]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.810 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[20][2] ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 51.797 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[17][2] ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 51.745 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[21][2] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.742 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[11][3] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.730 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[20][2] ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 51.725 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][3] ; DReadData[3]     ; clock      ;
+; N/A                                     ; None                                                ; 51.718 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[26][1] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.713 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[4][6]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.690 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][2] ; DReadData[11]    ; clock      ;
+; N/A                                     ; None                                                ; 51.677 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[2][13] ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.645 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[22][3] ; DReadData[27]    ; clock      ;
+; N/A                                     ; None                                                ; 51.621 ns  ; DataPath:MIPSDP|RegisterFile:REG|RF[1][7]  ; DReadData[2]     ; clock      ;
+; N/A                                     ; None                                                ; 51.621 ns  ; DataPath:MIPSDP|PC[2]                      ; ALUResultOut[21] ; clock      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                                            ;                  ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+--------------------------------------------+------------------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+-------+------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                     ; To Clock ;
++---------------+-------------+-----------+-------+------------------------+----------+
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[20] ; clock    ;
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[21] ; clock    ;
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[22] ; clock    ;
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[23] ; clock    ;
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[24] ; clock    ;
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[25] ; clock    ;
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[26] ; clock    ;
+; N/A           ; None        ; 0.514 ns  ; reset ; DataPath:MIPSDP|PC[27] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[10] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[11] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[12] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[13] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[14] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[15] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[16] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[17] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[18] ; clock    ;
+; N/A           ; None        ; 0.492 ns  ; reset ; DataPath:MIPSDP|PC[19] ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[2]  ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[3]  ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[4]  ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[5]  ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[6]  ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[7]  ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[8]  ; clock    ;
+; N/A           ; None        ; 0.470 ns  ; reset ; DataPath:MIPSDP|PC[9]  ; clock    ;
++---------------+-------------+-----------+-------+------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Thu Dec 09 16:03:03 2021
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off MIPS1CYCLE -c MIPS1CYCLE
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clock" is an undefined clock
+Info: Clock "clock" has Internal fmax of 19.99 MHz between source register "DataPath:MIPSDP|PC[2]" and destination register "DataPath:MIPSDP|PC[6]" (period= 50.036 ns)
+    Info: + Longest register to register delay is 49.458 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.175 ns) = 0.175 ns; Loc. = LC3_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[2]'
+        Info: 2: + IC(1.705 ns) + CELL(1.948 ns) = 3.828 ns; Loc. = EC2_1_AN3; Fanout = 1; MEM Node = 'DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom|q[19]~mem_cell_ra'
+        Info: 3: + IC(0.000 ns) + CELL(1.692 ns) = 5.520 ns; Loc. = EC2_1_AN3; Fanout = 214; MEM Node = 'DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom|q[19]'
+        Info: 4: + IC(4.236 ns) + CELL(0.487 ns) = 10.243 ns; Loc. = LC3_18_AT3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux55~297'
+        Info: 5: + IC(0.308 ns) + CELL(0.487 ns) = 11.038 ns; Loc. = LC6_18_AT3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux55~298'
+        Info: 6: + IC(0.324 ns) + CELL(1.111 ns) = 12.473 ns; Loc. = LC6_17_AT3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux55~299'
+        Info: 7: + IC(3.734 ns) + CELL(0.487 ns) = 16.694 ns; Loc. = LC7_14_BB3; Fanout = 9; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux55~302'
+        Info: 8: + IC(4.696 ns) + CELL(0.487 ns) = 21.877 ns; Loc. = LC10_12_AO3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|ALUBin[0]~2960'
+        Info: 9: + IC(0.327 ns) + CELL(0.487 ns) = 22.691 ns; Loc. = LC7_12_AO3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|ALUBin[0]~2969'
+        Info: 10: + IC(0.292 ns) + CELL(0.487 ns) = 23.470 ns; Loc. = LC5_11_AO3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11348'
+        Info: 11: + IC(3.484 ns) + CELL(1.408 ns) = 28.362 ns; Loc. = LC3_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11174'
+        Info: 12: + IC(0.000 ns) + CELL(0.128 ns) = 28.490 ns; Loc. = LC4_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11182'
+        Info: 13: + IC(0.000 ns) + CELL(0.128 ns) = 28.618 ns; Loc. = LC5_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11190'
+        Info: 14: + IC(0.000 ns) + CELL(0.128 ns) = 28.746 ns; Loc. = LC6_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11197'
+        Info: 15: + IC(0.000 ns) + CELL(0.128 ns) = 28.874 ns; Loc. = LC7_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11203'
+        Info: 16: + IC(0.000 ns) + CELL(0.128 ns) = 29.002 ns; Loc. = LC8_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11209'
+        Info: 17: + IC(0.000 ns) + CELL(0.128 ns) = 29.130 ns; Loc. = LC9_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11216'
+        Info: 18: + IC(0.000 ns) + CELL(0.128 ns) = 29.258 ns; Loc. = LC10_12_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11222'
+        Info: 19: + IC(0.574 ns) + CELL(0.128 ns) = 29.960 ns; Loc. = LC1_14_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11228'
+        Info: 20: + IC(0.000 ns) + CELL(0.128 ns) = 30.088 ns; Loc. = LC2_14_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11234'
+        Info: 21: + IC(0.000 ns) + CELL(0.128 ns) = 30.216 ns; Loc. = LC3_14_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11240'
+        Info: 22: + IC(0.000 ns) + CELL(0.128 ns) = 30.344 ns; Loc. = LC4_14_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11246'
+        Info: 23: + IC(0.000 ns) + CELL(0.128 ns) = 30.472 ns; Loc. = LC5_14_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11252'
+        Info: 24: + IC(0.000 ns) + CELL(0.957 ns) = 31.429 ns; Loc. = LC6_14_AM3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11258'
+        Info: 25: + IC(3.695 ns) + CELL(0.978 ns) = 36.102 ns; Loc. = LC7_10_AO3; Fanout = 29; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11261'
+        Info: 26: + IC(3.791 ns) + CELL(0.978 ns) = 40.871 ns; Loc. = LC5_8_AQ3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|PCValue~2579'
+        Info: 27: + IC(0.284 ns) + CELL(0.978 ns) = 42.133 ns; Loc. = LC7_8_AQ3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|PCValue~2580'
+        Info: 28: + IC(3.983 ns) + CELL(0.978 ns) = 47.094 ns; Loc. = LC10_22_AN3; Fanout = 26; COMB Node = 'DataPath:MIPSDP|PCValue~2586'
+        Info: 29: + IC(1.707 ns) + CELL(0.657 ns) = 49.458 ns; Loc. = LC7_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[6]'
+        Info: Total cell delay = 16.318 ns ( 32.99 % )
+        Info: Total interconnect delay = 33.140 ns ( 67.01 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clock" to destination register is 5.011 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.933 ns) = 1.933 ns; Loc. = PIN_P3; Fanout = 1006; CLK Node = 'clock'
+            Info: 2: + IC(3.068 ns) + CELL(0.010 ns) = 5.011 ns; Loc. = LC7_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[6]'
+            Info: Total cell delay = 1.943 ns ( 38.77 % )
+            Info: Total interconnect delay = 3.068 ns ( 61.23 % )
+        Info: - Longest clock path from clock "clock" to source register is 5.011 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.933 ns) = 1.933 ns; Loc. = PIN_P3; Fanout = 1006; CLK Node = 'clock'
+            Info: 2: + IC(3.068 ns) + CELL(0.010 ns) = 5.011 ns; Loc. = LC3_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[2]'
+            Info: Total cell delay = 1.943 ns ( 38.77 % )
+            Info: Total interconnect delay = 3.068 ns ( 61.23 % )
+    Info: + Micro clock to output delay of source is 0.328 ns
+    Info: + Micro setup delay of destination is 0.250 ns
+Info: tsu for register "DataPath:MIPSDP|PC[2]" (data pin = "reset", clock pin = "clock") is 0.030 ns
+    Info: + Longest pin to register delay is 4.791 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.307 ns) = 2.307 ns; Loc. = PIN_A20; Fanout = 1006; PIN Node = 'reset'
+        Info: 2: + IC(1.827 ns) + CELL(0.657 ns) = 4.791 ns; Loc. = LC3_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[2]'
+        Info: Total cell delay = 2.964 ns ( 61.87 % )
+        Info: Total interconnect delay = 1.827 ns ( 38.13 % )
+    Info: + Micro setup delay of destination is 0.250 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 5.011 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.933 ns) = 1.933 ns; Loc. = PIN_P3; Fanout = 1006; CLK Node = 'clock'
+        Info: 2: + IC(3.068 ns) + CELL(0.010 ns) = 5.011 ns; Loc. = LC3_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[2]'
+        Info: Total cell delay = 1.943 ns ( 38.77 % )
+        Info: Total interconnect delay = 3.068 ns ( 61.23 % )
+Info: tco from clock "clock" to destination pin "DReadData[2]" through register "DataPath:MIPSDP|PC[5]" is 61.493 ns
+    Info: + Longest clock path from clock "clock" to source register is 5.011 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.933 ns) = 1.933 ns; Loc. = PIN_P3; Fanout = 1006; CLK Node = 'clock'
+        Info: 2: + IC(3.068 ns) + CELL(0.010 ns) = 5.011 ns; Loc. = LC6_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[5]'
+        Info: Total cell delay = 1.943 ns ( 38.77 % )
+        Info: Total interconnect delay = 3.068 ns ( 61.23 % )
+    Info: + Micro clock to output delay of source is 0.328 ns
+    Info: + Longest register to pin delay is 56.154 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.175 ns) = 0.175 ns; Loc. = LC6_19_AN3; Fanout = 35; REG Node = 'DataPath:MIPSDP|PC[5]'
+        Info: 2: + IC(3.634 ns) + CELL(1.948 ns) = 5.757 ns; Loc. = EC12_1_AO3; Fanout = 1; MEM Node = 'DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom|q[22]~mem_cell_ra'
+        Info: 3: + IC(0.000 ns) + CELL(1.692 ns) = 7.449 ns; Loc. = EC12_1_AO3; Fanout = 195; MEM Node = 'DataPath:MIPSDP|IMemory:IMemory_inst|lpm_rom:lpm_rom_component|altrom:srom|q[22]'
+        Info: 4: + IC(4.069 ns) + CELL(1.111 ns) = 12.629 ns; Loc. = LC3_20_AU3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux25~369'
+        Info: 5: + IC(0.324 ns) + CELL(0.487 ns) = 13.440 ns; Loc. = LC7_20_AU3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux25~370'
+        Info: 6: + IC(4.075 ns) + CELL(0.978 ns) = 18.493 ns; Loc. = LC3_24_AM3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux25~371'
+        Info: 7: + IC(0.284 ns) + CELL(0.487 ns) = 19.264 ns; Loc. = LC7_23_AM3; Fanout = 3; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux25~374'
+        Info: 8: + IC(2.200 ns) + CELL(0.978 ns) = 22.442 ns; Loc. = LC6_10_AM3; Fanout = 2; COMB Node = 'DataPath:MIPSDP|RegisterFile:REG|Mux25~385'
+        Info: 9: + IC(3.667 ns) + CELL(1.408 ns) = 27.517 ns; Loc. = LC4_13_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~438'
+        Info: 10: + IC(0.000 ns) + CELL(0.128 ns) = 27.645 ns; Loc. = LC5_13_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~434'
+        Info: 11: + IC(0.000 ns) + CELL(0.128 ns) = 27.773 ns; Loc. = LC6_13_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~430'
+        Info: 12: + IC(0.000 ns) + CELL(0.128 ns) = 27.901 ns; Loc. = LC7_13_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~426'
+        Info: 13: + IC(0.000 ns) + CELL(0.128 ns) = 28.029 ns; Loc. = LC8_13_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~422'
+        Info: 14: + IC(0.000 ns) + CELL(0.128 ns) = 28.157 ns; Loc. = LC9_13_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~418'
+        Info: 15: + IC(0.000 ns) + CELL(0.128 ns) = 28.285 ns; Loc. = LC10_13_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~414'
+        Info: 16: + IC(0.574 ns) + CELL(0.128 ns) = 28.987 ns; Loc. = LC1_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~410'
+        Info: 17: + IC(0.000 ns) + CELL(0.128 ns) = 29.115 ns; Loc. = LC2_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~406'
+        Info: 18: + IC(0.000 ns) + CELL(0.128 ns) = 29.243 ns; Loc. = LC3_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~402'
+        Info: 19: + IC(0.000 ns) + CELL(0.128 ns) = 29.371 ns; Loc. = LC4_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~398'
+        Info: 20: + IC(0.000 ns) + CELL(0.128 ns) = 29.499 ns; Loc. = LC5_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~394'
+        Info: 21: + IC(0.000 ns) + CELL(0.128 ns) = 29.627 ns; Loc. = LC6_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~390'
+        Info: 22: + IC(0.000 ns) + CELL(0.128 ns) = 29.755 ns; Loc. = LC7_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~386'
+        Info: 23: + IC(0.000 ns) + CELL(0.128 ns) = 29.883 ns; Loc. = LC8_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~382'
+        Info: 24: + IC(0.000 ns) + CELL(0.128 ns) = 30.011 ns; Loc. = LC9_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~378'
+        Info: 25: + IC(0.000 ns) + CELL(0.128 ns) = 30.139 ns; Loc. = LC10_15_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~374'
+        Info: 26: + IC(0.574 ns) + CELL(0.128 ns) = 30.841 ns; Loc. = LC1_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~370'
+        Info: 27: + IC(0.000 ns) + CELL(0.128 ns) = 30.969 ns; Loc. = LC2_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~366'
+        Info: 28: + IC(0.000 ns) + CELL(0.128 ns) = 31.097 ns; Loc. = LC3_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~362'
+        Info: 29: + IC(0.000 ns) + CELL(0.128 ns) = 31.225 ns; Loc. = LC4_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~358'
+        Info: 30: + IC(0.000 ns) + CELL(0.128 ns) = 31.353 ns; Loc. = LC5_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~354'
+        Info: 31: + IC(0.000 ns) + CELL(0.128 ns) = 31.481 ns; Loc. = LC6_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~350'
+        Info: 32: + IC(0.000 ns) + CELL(0.128 ns) = 31.609 ns; Loc. = LC7_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~346'
+        Info: 33: + IC(0.000 ns) + CELL(0.128 ns) = 31.737 ns; Loc. = LC8_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~342'
+        Info: 34: + IC(0.000 ns) + CELL(0.957 ns) = 32.694 ns; Loc. = LC9_17_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|LessThan0~336'
+        Info: 35: + IC(0.292 ns) + CELL(0.487 ns) = 33.473 ns; Loc. = LC3_16_AO3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11176'
+        Info: 36: + IC(0.284 ns) + CELL(0.487 ns) = 34.244 ns; Loc. = LC7_16_AO3; Fanout = 121; COMB Node = 'DataPath:MIPSDP|MIPSALU:ALU|Add0~11177'
+        Info: 37: + IC(3.964 ns) + CELL(0.487 ns) = 38.695 ns; Loc. = LC5_14_AK3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|DataMemory:datamemory|Mux25~31'
+        Info: 38: + IC(4.175 ns) + CELL(0.487 ns) = 43.357 ns; Loc. = LC10_6_AT3; Fanout = 28; COMB Node = 'DataPath:MIPSDP|DataMemory:datamemory|Mux25~32'
+        Info: 39: + IC(4.346 ns) + CELL(1.134 ns) = 48.837 ns; Loc. = LC9_11_AL3; Fanout = 1; COMB Node = 'DataPath:MIPSDP|DataMemory:datamemory|Mux25~33'
+        Info: 40: + IC(4.845 ns) + CELL(2.472 ns) = 56.154 ns; Loc. = PIN_AC29; Fanout = 0; PIN Node = 'DReadData[2]'
+        Info: Total cell delay = 18.847 ns ( 33.56 % )
+        Info: Total interconnect delay = 37.307 ns ( 66.44 % )
+Info: th for register "DataPath:MIPSDP|PC[20]" (data pin = "reset", clock pin = "clock") is 0.514 ns
+    Info: + Longest clock path from clock "clock" to destination register is 5.011 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.933 ns) = 1.933 ns; Loc. = PIN_P3; Fanout = 1006; CLK Node = 'clock'
+        Info: 2: + IC(3.068 ns) + CELL(0.010 ns) = 5.011 ns; Loc. = LC1_23_AN3; Fanout = 3; REG Node = 'DataPath:MIPSDP|PC[20]'
+        Info: Total cell delay = 1.943 ns ( 38.77 % )
+        Info: Total interconnect delay = 3.068 ns ( 61.23 % )
+    Info: + Micro hold delay of destination is 0.250 ns
+    Info: - Shortest pin to register delay is 4.747 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.307 ns) = 2.307 ns; Loc. = PIN_A20; Fanout = 1006; PIN Node = 'reset'
+        Info: 2: + IC(1.783 ns) + CELL(0.657 ns) = 4.747 ns; Loc. = LC1_23_AN3; Fanout = 3; REG Node = 'DataPath:MIPSDP|PC[20]'
+        Info: Total cell delay = 2.964 ns ( 62.44 % )
+        Info: Total interconnect delay = 1.783 ns ( 37.56 % )
+Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 4691 megabytes of memory during processing
+    Info: Processing ended: Thu Dec 09 16:03:13 2021
+    Info: Elapsed time: 00:00:10
+
+

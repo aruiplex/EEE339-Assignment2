@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at MIPS1CYCLE.v(87): Always Construct contains both blocking and non-blocking assignments
+Warning (10236): Verilog HDL Implicit Net warning at MIPS1CYCLE.v(205): created implicit net for "Jump"
